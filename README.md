@@ -10,7 +10,27 @@ A lightweight, OpenAI API-compatible HTTP server that echoes chat completion req
 
 ## Usage
 
-### In-Chat Example
+### Docker
+
+`docker run -d -p 8080:8080 -e REDACT_LOGS=true --name chat-mirror ulcdia/chat-mirror:latest`
+
+or
+
+```bash
+git clone https://github.com/uLcdia/chat-mirror
+cd chat-mirror
+docker-compose up -d
+```
+
+### Local
+
+```bash
+python app.py
+```
+
+*Listens on `http://0.0.0.0:8080`.*
+
+## In-Chat Example
 
 **User**: `Example usage for chat-mirror`
 
@@ -105,17 +125,3 @@ This is the fourth user message.
     ]
 }
 ```
-
-### Docker
-
-```bash
-docker-compose up -d
-```
-
-### Local
-
-```bash
-python app.py
-```
-
-*Listens on `http://0.0.0.0:8080`.*
